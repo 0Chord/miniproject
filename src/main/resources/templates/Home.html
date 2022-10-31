@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인 화면</title>
+</head>
+<body>
+<form action="/auth" method="get">
+    <a href="https://kauth.kakao.com/oauth/authorize?client_id=2c8dc6dbbc94f8e6332d9bc9d6fc3b5e&redirect_uri=http://localhost:8080/auth&response_type=code">
+        <img src="./webapp/kakao_login_medium_wide.png"/>
+    </a>
+</form>
+    <br>
+<form action="/naverAuth" method="get">
+    <a href="https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=zIZhrLq2GHUpTKOc1y4m&state=STATE_STRING&redirect_uri=http://localhost:8080/naverAuth">
+        <img src="./webapp/naver_login_update.png"/>
+    </a>
+</form>
+</body>
+
+</html>
