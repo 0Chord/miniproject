@@ -11,9 +11,7 @@ public class HomeController {
 
 
     @GetMapping("/")
-    public String home(Model model) {
-        SecretInformation secretInformation = new SecretInformation();
-        model.addAttribute("secret",secretInformation);
+    public String home() {
         return "Home";
     }
 
