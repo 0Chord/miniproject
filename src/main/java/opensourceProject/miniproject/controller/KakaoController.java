@@ -1,6 +1,7 @@
 package opensourceProject.miniproject.controller;
 
 import opensourceProject.miniproject.dto.KakaoUserInfo;
+import opensourceProject.miniproject.dto.KakaoUserName;
 import opensourceProject.miniproject.service.KakaoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,9 +24,9 @@ public class KakaoController {
                             HttpServletRequest request){
 
         String accessToken = kakaoService.getAccessToken(code);
-        System.out.println("accessToken = " + accessToken);
         KakaoUserInfo userInfo = kakaoService.getUserInfo(accessToken);
-        System.out.println("userInfo = " + userInfo);
-        return null;
+        KakaoUserName userName = new KakaoUserName(userInfo.getProperties().getNickname());
+        model.addAttribute("member",userName);
+        return "signIn/inviteUser";
     }
 }

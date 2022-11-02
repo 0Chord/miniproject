@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link th:href="@{./webapp/bootstrap.min.css}"
+          href="./webapp/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 560px;
+        }
+    </style>
+    <title>개인 페이지</title>
+</head>
+<body>
+<div class="container">
+    <div class="py-5 text-center">
+        <h2 th:text="|${member.nickname}님 환영합니다|"></h2>
+    </div>
+    <button class="w-100 btn btn-primary btn-lg" onclick="location.href='/signIn/prepare'">벤포드 법칙</button>
+    <br>
+
+    <a href="https://kauth.kakao.com/oauth/logout?client_id=d078d63bfea989cd9ed843a8b8c59cfe&logout_redirect_uri=http://localhost:8080"
+       class="col-sm-3 text-center">
+        <br>
+        <button type="button" class="w-100 btn btn-primary btn-lg">카카오 로그아웃</button>
+    </a>
+
+</div>
+</body>
+</html>

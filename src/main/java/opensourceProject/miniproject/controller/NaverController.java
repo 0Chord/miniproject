@@ -1,6 +1,7 @@
 package opensourceProject.miniproject.controller;
 
 import opensourceProject.miniproject.dto.NaverUserInfo;
+import opensourceProject.miniproject.dto.NaverUserName;
 import opensourceProject.miniproject.service.NaverService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,7 +24,10 @@ public class NaverController {
                              Model model, HttpServletRequest request){
         String accessToken = naverService.getAccessToken(code, state);
         NaverUserInfo userInfo = naverService.getUserInfo(accessToken);
+        NaverUserName userName = new NaverUserName(userInfo.getResponse().getName());
         System.out.println("userInfo = " + userInfo);
-        return null;
+        System.out.println("userName = " + userName);
+        model.addAttribute("member",userName);
+        return "signIn/inviteUser";
     }
 }
