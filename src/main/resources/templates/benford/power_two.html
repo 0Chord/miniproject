@@ -10,7 +10,7 @@
             max-width: 560px;
         }
     </style>
-    <title>피보나치 수열</title>
+    <title>2의 제곱</title>
 </head>
 <body>
 <div class="container">
@@ -30,21 +30,21 @@
     <button class="w-100 btn btn-primary btn-lg" onclick="location.href='/signIn/benford'">뒤로 가기</button>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-<script type="text/javascript" src="../webapp/js/fibonacci.js"></script>
+<script type="text/javascript" src="../webapp/js/powerTwo.js"></script>
 <script type="text/javascript" src="../webapp/js/chart.js"></script>
 <script type="text/javascript">
     let context100000 = document.getElementById("100000-chart").getContext('2d');
-    let context1000= document.getElementById("1000-chart").getContext('2d');
-    let context5000= document.getElementById("5000-chart").getContext('2d');
-    let context10000= document.getElementById("10000-chart").getContext('2d');
-    let context30000= document.getElementById("30000-chart").getContext('2d');
-    let context50000= document.getElementById("50000-chart").getContext('2d');
-    my_chart(context1000,fibonacci_obj,1000);
-    my_chart(context5000,fibonacci_obj,5000);
-    my_chart(context10000,fibonacci_obj,10000);
-    my_chart(context30000,fibonacci_obj,30000);
-    my_chart(context50000,fibonacci_obj,50000);
-    my_chart(context100000,fibonacci_obj,100000);
+    let context1000 = document.getElementById("1000-chart").getContext('2d');
+    let context5000 = document.getElementById("5000-chart").getContext('2d');
+    let context10000 = document.getElementById("10000-chart").getContext('2d');
+    let context30000 = document.getElementById("30000-chart").getContext('2d');
+    let context50000 = document.getElementById("50000-chart").getContext('2d');
+    my_chart(context1000, power_obj, 1000);
+    my_chart(context5000, power_obj, 5000);
+    my_chart(context10000, power_obj, 10000);
+    my_chart(context30000, power_obj, 30000);
+    my_chart(context50000, power_obj, 50000);
+    my_chart(context100000, power_obj, 100000);
 </script>
 </body>
 </html>

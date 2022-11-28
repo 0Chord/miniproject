@@ -9,7 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class BenfordController {
 
     @GetMapping("fibonacci")
-    public String fibo(){
+    public String fibo() {
         return "benford/fibonacci";
+    }
+
+    @GetMapping("power_two")
+    public String power() {
+        return "benford/power_two";
     }
 }
