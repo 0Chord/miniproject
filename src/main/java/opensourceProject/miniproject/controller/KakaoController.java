@@ -20,8 +20,7 @@ public class KakaoController {
     }
 
     @GetMapping("/auth")
-    public String kakaoAuth(@RequestParam(value = "code", required = false) String code, Model model,
-                            HttpServletRequest request){
+    public String kakaoAuth(@RequestParam(value = "code", required = false) String code, Model model){
 
         String accessToken = kakaoService.getAccessToken(code);
         KakaoUserInfo userInfo = kakaoService.getUserInfo(accessToken);

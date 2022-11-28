@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link th:href="@{../webapp/bootstrap.min.css}"
+          href="../webapp/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 560px;
+        }
+    </style>
+    <title>피보나치 수열</title>
+</head>
+<body>
+<div class="container">
+        <canvas id="bar-chart" width="300" height="230"></canvas>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script type="text/javascript" src="../webapp/js/fibonacci.js"></script>
+<script type="text/javascript">
+    let context = document.getElementById("bar-chart").getContext('2d');
+    let my_chart = new Chart(context, {
+        type: 'bar',
+        data: {
+            labels: [
+                '1', '2', '3', '4', '5', '6', '7', '8', '9'
+            ],
+            datasets: [
+                {
+                    label: 100000,
+                    fill: false,
+                    data: fibonacci_obj["100000"],
+                    backgroundColor: [
+                        'rgba(255,99,132,0.2)',
+                        'rgba(255,99,132,0.2)',
+                        'rgba(255,99,132,0.2)',
+                        'rgba(255,99,132,0.2)',
+                        'rgba(255,99,132,0.2)',
+                        'rgba(255,99,132,0.2)',
+                        'rgba(255,99,132,0.2)',
+                        'rgba(255,99,132,0.2)',
+                        'rgba(255,99,132,0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(255,99,132,1)',
+                        'rgba(255,99,132,1)',
+                        'rgba(255,99,132,1)',
+                        'rgba(255,99,132,1)',
+                        'rgba(255,99,132,1)',
+                        'rgba(255,99,132,1)',
+                        'rgba(255,99,132,1)',
+                        'rgba(255,99,132,1)'
+                    ],
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            scales: {
+                yAxes: [
+                    {
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }
+                ]
+            }
+        }
+    })
+</script>
+</body>
+</html>
