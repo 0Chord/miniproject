@@ -8,13 +8,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/benford")
 public class BenfordController {
 
-    @GetMapping("fibonacci")
+    @GetMapping("/fibonacci")
     public String fibo() {
         return "benford/fibonacci";
     }
 
-    @GetMapping("power_two")
+    @GetMapping("/powerTwo")
     public String power() {
         return "benford/power_two";
+    }
+
+    @GetMapping("/koreaStock")
+    public String stock(){
+        return "benford/korea_stock";
+    }
+
+    @GetMapping("/americaStock")
+    public String america(){
+        return "benford/america_stock";
     }
 }

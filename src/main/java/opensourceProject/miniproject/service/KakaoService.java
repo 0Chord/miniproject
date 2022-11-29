@@ -23,7 +23,7 @@ public class KakaoService {
     public String getAccessToken(String authorizeToken){
         try{
             String clientId = secretInformation.getKAKAO_CLIENT();
-            String redirectURL = "http://localhost:8080/auth";
+            String redirectURL = "https://0chord.shop/auth";
 
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link th:href="@{../webapp/bootstrap.min.css}"
+          href="../webapp/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 560px;
+        }
+    </style>
+    <title>한국 상장 주식</title>
+</head>
+<body>
+<div class="container">
+    <h3 style="text-align: center">KOSPI</h3>
+    <canvas id="kospi-chart" width="300" height="230"></canvas>
+    <h3 style="text-align: center">KOSDAQ</h3>
+    <canvas id="kosdaq-chart" width="300" height="230"></canvas>
+    <h3 style="text-align: center">KOREA</h3>
+    <canvas id="korea-chart" width="300" height="230"></canvas>
+    <br>
+    <button class="w-100 btn btn-primary btn-lg" onclick="location.href='/signIn/benford'">뒤로 가기</button>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script type="text/javascript" src="../webapp/js/koreaStock.js"></script>
+<script type="text/javascript" src="../webapp/js/chart.js"></script>
+<script>
+    let contextKospi = document.getElementById("kospi-chart").getContext('2d');
+    let contextKosdaq = document.getElementById("kosdaq-chart").getContext('2d');
+    let contextKorea = document.getElementById("korea-chart").getContext('2d');
+    my_chart(contextKospi, korea_obj, "kospi");
+    my_chart(contextKosdaq, korea_obj, "kosdaq");
+    my_chart(contextKorea, korea_obj, "korea");
+</script>
+</body>
+</html>

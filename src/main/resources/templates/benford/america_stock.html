@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link th:href="@{../webapp/bootstrap.min.css}"
+          href="../webapp/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 560px;
+        }
+    </style>
+    <title>미국 상장 주식</title>
+</head>
+<body>
+<div class="container">
+    <h3 style="text-align: center">NASDAQ</h3>
+    <canvas id="nasdaq-chart" width="300" height="230"></canvas>
+    <h3 style="text-align: center">S&P 500</h3>
+    <canvas id="snp-chart" width="300" height="230"></canvas>
+    <h3 style="text-align: center">AMERICA</h3>
+    <canvas id="america-chart" width="300" height="230"></canvas>
+    <br>
+    <button class="w-100 btn btn-primary btn-lg" onclick="location.href='/signIn/benford'">뒤로 가기</button>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script type="text/javascript" src="../webapp/js/americaStock.js"></script>
+<script type="text/javascript" src="../webapp/js/chart.js"></script>
+<script>
+    let contextNasdaq = document.getElementById("nasdaq-chart").getContext('2d');
+    let contextSnp = document.getElementById("snp-chart").getContext('2d');
+    let contextAmerica = document.getElementById("america-chart").getContext('2d');
+    my_chart(contextNasdaq, america_obj, "nasdaq");
+    my_chart(contextSnp, america_obj, "snp500");
+    my_chart(contextAmerica, america_obj, "america");
+</script>
+</body>
+</html>
