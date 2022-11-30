@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link th:href="@{../webapp/bootstrap.min.css}"
+          href="../webapp/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 560px;
+        }
+    </style>
+    <title>인구 통계</title>
+</head>
+<body>
+<div class="container">
+    <h3 style="text-align: center">한국 인구 통계</h3>
+    <canvas id="person-chart" width="300" height="230"></canvas>
+    <br>
+    <button class="w-100 btn btn-primary btn-lg" onclick="location.href='/signIn/benford'">뒤로 가기</button>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script type="text/javascript" src="../webapp/js/koreaPerson.js"></script>
+<script type="text/javascript" src="../webapp/js/chart.js"></script>
+<script>
+    let contextPerson = document.getElementById("person-chart").getContext('2d');
+    my_chart(contextPerson, person_obj, "person");
+</script>
+</body>
+</html>

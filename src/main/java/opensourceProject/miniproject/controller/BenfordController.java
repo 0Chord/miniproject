@@ -27,4 +27,15 @@ public class BenfordController {
     public String america(){
         return "benford/america_stock";
     }
+
+    @GetMapping("/koreanPerson")
+    public String person(){
+        return "benford/person";
+    }
+
+    @GetMapping("/worldGdp")
+    public String gdp(){
+        return "benford/world_gdp";
+    }
+
 }
